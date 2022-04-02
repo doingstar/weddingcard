@@ -797,11 +797,11 @@
         });
 
         $(window).bind("scroll", function () {
-          if (wsc_top > $("#mma").height() * 2) {
-            $("#mma").show();
-          } else {
-            $("#mma").hide();
-          }
+         // if (wsc_top > $("#mma").height() * 2) {
+         //   $("#mma").show();
+         // } else {
+         //   $("#mma").hide();
+         // }
 
           $(".mma_btn").each(function () {
             $(this).attr(
@@ -1190,7 +1190,7 @@
         </style>
 
         <div class="section_title" style="display: none">우리의 아름다운 순간</div>
-        <div class="section_body" style="display: none">
+        <div class="section_body">
           <ul id="photo_counter">
             <li>
               <div class="photo_counter_num">1</div>
