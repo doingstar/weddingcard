@@ -54,6 +54,8 @@ $(document).ready(function() {
              CONTACT
                              */
     $('.contact_button').bind('click', function() {
+        alert("작업중...")
+        return;
         mask(0.5)
         var type = $(this).data('type')
         $('#contact_'+type).show()
