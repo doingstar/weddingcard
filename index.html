@@ -541,6 +541,10 @@
         padding-right: 15px;
       }
 
+      #bottom_section {
+        display: none
+      }
+
       .ch0 {
         font-size: 11px;
         color: #878787;
@@ -914,8 +918,9 @@
         }
         #scene_slider {
           position: absolute;
-          width: 100%;
+          width: 95%;
           z-index: -1;
+          margin-top: 225px;
           /* top: 244px; */
         }
         #skin_info {
@@ -924,6 +929,7 @@
           left: 0px;
           width: 100%;
           z-index: 2;
+          display: none;
         }
       </style>
 
@@ -1730,7 +1736,7 @@ function kakao_navi(){
       </div>
 
       <div class="separator"></div>
-      <div class="section" id="map_row">
+      <div class="section" id="map_row" style="display:none">
         <style>
           .section_desc {
             font-family: "SpoqaHanSans";
@@ -2063,8 +2069,7 @@ function kakao_navi(){
         </div>
       </div>
 
-      <div
-        class="section_wrapper"
+      <div id="bottom_section" class="section_wrapper"
         style="
           background-color: #21242d;
           padding-top: 20px;
@@ -2261,7 +2266,7 @@ function kakao_navi(){
 
       <style>
         #tail_menu_section {
-          /* display: none; */
+          display: none !important;
         }
         .tail_menu_row {
           border-top: 1px solid #47494f;
@@ -2385,22 +2390,32 @@ function kakao_navi(){
 
       .photo_view_img_wrapper {
         position: relative;
+        min-height: 350px;
       }
+
       .photo_view_img {
         width: 100%;
       }
+
       .photo_view_swipe_guide {
         height: 50px;
         width: auto;
         position: absolute;
         top: 38%;
         z-index: 99;
-        display: none;
+        display: flex;
+        /* display: none; */
       }
 
-      #photo_view_console td {
+      .photo_view_console td {
         line-height: auto;
         font-size: 14px;
+      }
+
+      .photo_view_console {
+        border-spacing: 0;
+        height: 100%;
+        margin: auto;
       }
 
       .swiper-slide {
@@ -2419,6 +2434,7 @@ function kakao_navi(){
         height: 55px;
         line-height: 55px;
         position: relative;
+        display: none;
       }
       .photo_view_slide_button {
         height: 19px;
@@ -2430,6 +2446,11 @@ function kakao_navi(){
         font-size: 12px;
         padding-top: 20px;
       }
+
+      .reply_list {
+          display: none;
+      }
+
       .photo_reply_counter {
         line-height: 100%;
         padding-left: 7px;
@@ -2440,22 +2461,22 @@ function kakao_navi(){
     <div id="photo_view">
       <div id="photo_view_top">
         <div id="photo_view_title">PHOTO</div>
-        <img id="photo_view_close_button" src="./img/button_x_01_with_bg.png" />
+        <img id="photo_view_close_button" src="./image/close.png" />
       </div>
 
       <div id="photo_view_top_dummy"></div>
 
       <div id="photo_container" class="swiper-container">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" data-idx="1446005">
+          <div class="swiper-slide" data-idx="1">
             <!-- 상단영역 -->
             <div style="height: 15px; position: relative"></div>
 
             <!-- photo img -->
             <div class="photo_view_img_wrapper">
               <img
-                src="https://mcard3.bojagicard.com/thm/?reqfor=load&w=1280&q=60&src=/ecard/photo/s/sample180/14291a9ad67e44c22df5e2b96fef2aa6.jpg"
-                data-src_original="https://mcard3.bojagicard.com/ecard/photo/s/sample180/14291a9ad67e44c22df5e2b96fef2aa6.jpg"
+                src="./image/pic1.jpg"
+                data-src_original=""
                 class="photo_view_img"
                 data-photo_idx="1"
                 data-photo_no="1"
@@ -2480,16 +2501,12 @@ function kakao_navi(){
               <img
                 class="photo_view_slide_button"
                 id="photo_view_slide_left_button"
-                src="./img/photo_view-button_left.png"
+                src="./image/left-arrow.png"
                 style="left: 0; display: none"
               />
 
               <table
-                id="photo_view_console"
-                cellspacing="0"
-                cellpadding="0"
-                align="center"
-                height="100%"
+                class="photo_view_console"
               >
                 <tr>
                   <td class="photo_view_heart_button" data-idx="1446005">
@@ -2506,7 +2523,7 @@ function kakao_navi(){
               <img
                 class="photo_view_slide_button"
                 id="photo_view_slide_right_button"
-                src="./img/photo_view-button_right.png"
+                src="./image/right-arrow.png"
                 style="right: 0"
               />
             </div>
@@ -2560,17 +2577,17 @@ function kakao_navi(){
             <div style="clear: both"></div>
           </div>
 
-          <div class="swiper-slide" data-idx="1446003">
+          <div class="swiper-slide" data-idx="2">
             <!-- 상단영역 -->
             <div style="height: 15px; position: relative"></div>
 
             <!-- photo img -->
             <div class="photo_view_img_wrapper">
               <img
-                src="https://mcard3.bojagicard.com/thm/?reqfor=load&w=1280&q=60&src=/ecard/photo/s/sample180/95424aa677c9a654bb19c03d25b122da.jpg"
-                data-src_original="https://mcard3.bojagicard.com/ecard/photo/s/sample180/95424aa677c9a654bb19c03d25b122da.jpg"
+                src="./image/pic2.png"
+                data-src_original=""
                 class="photo_view_img"
-                data-photo_idx="1446003"
+                data-photo_idx="2"
                 data-photo_no="2"
                 data-is_video=""
                 style="margin-top: 4px"
@@ -2578,12 +2595,12 @@ function kakao_navi(){
 
               <img
                 class="photo_view_swipe_guide"
-                src="https://mcard3.bojagicard.com/img/arrow_ani_01_left.gif"
+                src="./image/left-arrow.png"
                 style="left: 0px"
               />
               <img
                 class="photo_view_swipe_guide"
-                src="https://mcard3.bojagicard.com/img/arrow_ani_01_right.gif"
+                src="./image/right-arrow.png"
                 style="right: 0px"
               />
             </div>
@@ -2593,16 +2610,12 @@ function kakao_navi(){
               <img
                 class="photo_view_slide_button"
                 id="photo_view_slide_left_button"
-                src="./img/photo_view-button_left.png"
+                src="./image/left-arrow.png"
                 style="left: 0"
               />
 
               <table
-                id="photo_view_console"
-                cellspacing="0"
-                cellpadding="0"
-                align="center"
-                height="100%"
+                class="photo_view_console"
               >
                 <tr>
                   <td class="photo_view_heart_button" data-idx="1446003">
@@ -2619,7 +2632,7 @@ function kakao_navi(){
               <img
                 class="photo_view_slide_button"
                 id="photo_view_slide_right_button"
-                src="./img/photo_view-button_right.png"
+                src="./image/right-arrow.png"
                 style="right: 0"
               />
             </div>
@@ -2673,17 +2686,17 @@ function kakao_navi(){
             <div style="clear: both"></div>
           </div>
 
-          <div class="swiper-slide" data-idx="1445999">
+          <div class="swiper-slide" data-idx="3">
             <!-- 상단영역 -->
             <div style="height: 15px; position: relative"></div>
 
             <!-- photo img -->
             <div class="photo_view_img_wrapper">
               <img
-                src="https://mcard3.bojagicard.com/thm/?reqfor=load&w=1280&q=60&src=/ecard/photo/s/sample180/09b1f03c7d10ecff96379bdd197d0d6d.jpg"
-                data-src_original="https://mcard3.bojagicard.com/ecard/photo/s/sample180/09b1f03c7d10ecff96379bdd197d0d6d.jpg"
+                src="./image/pic3.jpg"
+                data-src_original=""
                 class="photo_view_img"
-                data-photo_idx="1445999"
+                data-photo_idx="3"
                 data-photo_no="3"
                 data-is_video=""
                 style="margin-top: 4px"
@@ -2706,16 +2719,12 @@ function kakao_navi(){
               <img
                 class="photo_view_slide_button"
                 id="photo_view_slide_left_button"
-                src="./img/photo_view-button_left.png"
+                src="./image/left-arrow.png"
                 style="left: 0"
               />
 
               <table
-                id="photo_view_console"
-                cellspacing="0"
-                cellpadding="0"
-                align="center"
-                height="100%"
+                class="photo_view_console"
               >
                 <tr>
                   <td class="photo_view_heart_button" data-idx="1445999">
@@ -2732,7 +2741,7 @@ function kakao_navi(){
               <img
                 class="photo_view_slide_button"
                 id="photo_view_slide_right_button"
-                src="./img/photo_view-button_right.png"
+                src="./image/right-arrow.png"
                 style="right: 0"
               />
             </div>
@@ -2746,17 +2755,17 @@ function kakao_navi(){
             <div style="clear: both"></div>
           </div>
 
-          <div class="swiper-slide" data-idx="1445994">
+          <div class="swiper-slide" data-idx="4">
             <!-- 상단영역 -->
             <div style="height: 15px; position: relative"></div>
 
             <!-- photo img -->
             <div class="photo_view_img_wrapper">
               <img
-                src="https://mcard3.bojagicard.com/thm/?reqfor=load&w=1280&q=60&src=/ecard/photo/s/sample180/8a9da1ca5126d8f278bd3df8b65019c2.jpg"
-                data-src_original="https://mcard3.bojagicard.com/ecard/photo/s/sample180/8a9da1ca5126d8f278bd3df8b65019c2.jpg"
+                src="./image/pic4.jpg"
+                data-src_original=""          
                 class="photo_view_img"
-                data-photo_idx="1445994"
+                data-photo_idx="4"
                 data-photo_no="4"
                 data-is_video=""
                 style="margin-top: 4px"
@@ -2779,16 +2788,12 @@ function kakao_navi(){
               <img
                 class="photo_view_slide_button"
                 id="photo_view_slide_left_button"
-                src="./img/photo_view-button_left.png"
+                src="./image/left-arrow.png"
                 style="left: 0"
               />
 
               <table
-                id="photo_view_console"
-                cellspacing="0"
-                cellpadding="0"
-                align="center"
-                height="100%"
+                class="photo_view_console"
               >
                 <tr>
                   <td class="photo_view_heart_button" data-idx="1445994">
@@ -2805,7 +2810,7 @@ function kakao_navi(){
               <img
                 class="photo_view_slide_button"
                 id="photo_view_slide_right_button"
-                src="./img/photo_view-button_right.png"
+                src="./image/right-arrow.png"
                 style="right: 0"
               />
             </div>
@@ -2815,641 +2820,6 @@ function kakao_navi(){
             <div style="padding-top: 6px; padding-bottom: 6px"></div>
 
             <div class="reply_list" data-idx="1445994"></div>
-
-            <div style="clear: both"></div>
-          </div>
-
-          <div class="swiper-slide" data-idx="1445990">
-            <!-- 상단영역 -->
-            <div style="height: 15px; position: relative"></div>
-
-            <!-- photo img -->
-            <div class="photo_view_img_wrapper">
-              <img
-                src="https://mcard3.bojagicard.com/thm/?reqfor=load&w=1280&q=60&src=/ecard/photo/s/sample180/23c60b160dde2fc064720f97a4de3aec.jpg"
-                data-src_original="https://mcard3.bojagicard.com/ecard/photo/s/sample180/23c60b160dde2fc064720f97a4de3aec.jpg"
-                class="photo_view_img"
-                data-photo_idx="1445990"
-                data-photo_no="5"
-                data-is_video=""
-                style="margin-top: 4px"
-              />
-
-              <img
-                class="photo_view_swipe_guide"
-                src="https://mcard3.bojagicard.com/img/arrow_ani_01_left.gif"
-                style="left: 0px"
-              />
-              <img
-                class="photo_view_swipe_guide"
-                src="https://mcard3.bojagicard.com/img/arrow_ani_01_right.gif"
-                style="right: 0px"
-              />
-            </div>
-
-            <!-- 중단영역 -->
-            <div class="photo_view_mid">
-              <img
-                class="photo_view_slide_button"
-                id="photo_view_slide_left_button"
-                src="./img/photo_view-button_left.png"
-                style="left: 0"
-              />
-
-              <table
-                id="photo_view_console"
-                cellspacing="0"
-                cellpadding="0"
-                align="center"
-                height="100%"
-              >
-                <tr>
-                  <td class="photo_view_heart_button" data-idx="1445990">
-                    <img src="./img/photo_view-icon_heart.png" height="21" />
-                  </td>
-                  <td class="photo_view_heart_count" data-idx="1445990">12</td>
-                  <td style="line-height: 100%">
-                    <img src="./img/photo_view-icon_reply.png" height="21" />
-                  </td>
-                  <td class="photo_reply_counter" data-idx="1445990">0</td>
-                </tr>
-              </table>
-
-              <img
-                class="photo_view_slide_button"
-                id="photo_view_slide_right_button"
-                src="./img/photo_view-button_right.png"
-                style="right: 0"
-              />
-            </div>
-
-            <div class="photo_view_memo"></div>
-
-            <div style="padding-top: 6px; padding-bottom: 6px"></div>
-
-            <div class="reply_list" data-idx="1445990"></div>
-
-            <div style="clear: both"></div>
-          </div>
-
-          <div class="swiper-slide" data-idx="1445989">
-            <!-- 상단영역 -->
-            <div style="height: 15px; position: relative"></div>
-
-            <!-- photo img -->
-            <div class="photo_view_img_wrapper">
-              <img
-                src="https://mcard3.bojagicard.com/thm/?reqfor=load&w=1280&q=60&src=/ecard/photo/s/sample180/ed520be885c05aaffa4046a291014f37.jpg"
-                data-src_original="https://mcard3.bojagicard.com/ecard/photo/s/sample180/ed520be885c05aaffa4046a291014f37.jpg"
-                class="photo_view_img"
-                data-photo_idx="1445989"
-                data-photo_no="6"
-                data-is_video=""
-                style="margin-top: 4px"
-              />
-
-              <img
-                class="photo_view_swipe_guide"
-                src="https://mcard3.bojagicard.com/img/arrow_ani_01_left.gif"
-                style="left: 0px"
-              />
-              <img
-                class="photo_view_swipe_guide"
-                src="https://mcard3.bojagicard.com/img/arrow_ani_01_right.gif"
-                style="right: 0px"
-              />
-            </div>
-
-            <!-- 중단영역 -->
-            <div class="photo_view_mid">
-              <img
-                class="photo_view_slide_button"
-                id="photo_view_slide_left_button"
-                src="./img/photo_view-button_left.png"
-                style="left: 0"
-              />
-
-              <table
-                id="photo_view_console"
-                cellspacing="0"
-                cellpadding="0"
-                align="center"
-                height="100%"
-              >
-                <tr>
-                  <td class="photo_view_heart_button" data-idx="1445989">
-                    <img src="./img/photo_view-icon_heart.png" height="21" />
-                  </td>
-                  <td class="photo_view_heart_count" data-idx="1445989">9</td>
-                  <td style="line-height: 100%">
-                    <img src="./img/photo_view-icon_reply.png" height="21" />
-                  </td>
-                  <td class="photo_reply_counter" data-idx="1445989">0</td>
-                </tr>
-              </table>
-
-              <img
-                class="photo_view_slide_button"
-                id="photo_view_slide_right_button"
-                src="./img/photo_view-button_right.png"
-                style="right: 0"
-              />
-            </div>
-
-            <div class="photo_view_memo"></div>
-
-            <div style="padding-top: 6px; padding-bottom: 6px"></div>
-
-            <div class="reply_list" data-idx="1445989"></div>
-
-            <div style="clear: both"></div>
-          </div>
-
-          <div class="swiper-slide" data-idx="1445987">
-            <!-- 상단영역 -->
-            <div style="height: 15px; position: relative"></div>
-
-            <!-- photo img -->
-            <div class="photo_view_img_wrapper">
-              <img
-                src="https://mcard3.bojagicard.com/thm/?reqfor=load&w=1280&q=60&src=/ecard/photo/s/sample180/b929e6630c074bec13a9b996063e4353.jpg"
-                data-src_original="https://mcard3.bojagicard.com/ecard/photo/s/sample180/b929e6630c074bec13a9b996063e4353.jpg"
-                class="photo_view_img"
-                data-photo_idx="1445987"
-                data-photo_no="7"
-                data-is_video=""
-                style="margin-top: 4px"
-              />
-
-              <img
-                class="photo_view_swipe_guide"
-                src="https://mcard3.bojagicard.com/img/arrow_ani_01_left.gif"
-                style="left: 0px"
-              />
-              <img
-                class="photo_view_swipe_guide"
-                src="https://mcard3.bojagicard.com/img/arrow_ani_01_right.gif"
-                style="right: 0px"
-              />
-            </div>
-
-            <!-- 중단영역 -->
-            <div class="photo_view_mid">
-              <img
-                class="photo_view_slide_button"
-                id="photo_view_slide_left_button"
-                src="./img/photo_view-button_left.png"
-                style="left: 0"
-              />
-
-              <table
-                id="photo_view_console"
-                cellspacing="0"
-                cellpadding="0"
-                align="center"
-                height="100%"
-              >
-                <tr>
-                  <td class="photo_view_heart_button" data-idx="1445987">
-                    <img src="./img/photo_view-icon_heart.png" height="21" />
-                  </td>
-                  <td class="photo_view_heart_count" data-idx="1445987">9</td>
-                  <td style="line-height: 100%">
-                    <img src="./img/photo_view-icon_reply.png" height="21" />
-                  </td>
-                  <td class="photo_reply_counter" data-idx="1445987">1</td>
-                </tr>
-              </table>
-
-              <img
-                class="photo_view_slide_button"
-                id="photo_view_slide_right_button"
-                src="./img/photo_view-button_right.png"
-                style="right: 0"
-              />
-            </div>
-
-            <div class="photo_view_memo"></div>
-
-            <div style="padding-top: 6px; padding-bottom: 6px"></div>
-
-            <div class="reply_list" data-idx="1445987">
-              <div
-                class="msg reply"
-                data-idx="258546"
-                data-croot="258546"
-                data-idf="9dc98dcc5971b163bdb8e1c3f6166edc"
-                data-parent_idx="1445987"
-                data-area="photo"
-                data-notify="1"
-              >
-                <div class="msg_block_top">
-                  <span class="msg_croot_name"></span>
-                  <span class="msg_name" data-idx="258546">이승수</span>
-                  <span class="msg_text msg_memo" data-idx="258546"
-                    >잘만들었네요</span
-                  >
-                </div>
-
-                <div
-                  class="msg_block_bottom"
-                  data-area="photo"
-                  data-idx="258546"
-                  data-mail="dltmdtn@naver.com"
-                >
-                  <span class="msg_date">3월 31일</span>
-
-                  <div class="msg_button msg_reply_button">답글달기</div>
-                </div>
-              </div>
-              <div style="clear: both"></div>
-              <br />
-              <b>Warning</b>: implode() [<a href="function.implode"
-                >function.implode</a
-              >]: Invalid arguments passed in
-              <b>/home/hosting_users/bojagitest/www/g/photo_view_reply.php</b>
-              on line <b>14</b><br />
-              <br />
-              <b>Warning</b>: implode() [<a href="function.implode"
-                >function.implode</a
-              >]: Invalid arguments passed in
-              <b>/home/hosting_users/bojagitest/www/g/photo_view_reply.php</b>
-              on line <b>14</b><br />
-            </div>
-
-            <div style="clear: both"></div>
-          </div>
-
-          <div class="swiper-slide" data-idx="1338020">
-            <!-- 상단영역 -->
-            <div style="height: 15px; position: relative"></div>
-
-            <!-- photo img -->
-            <div class="photo_view_img_wrapper">
-              <img
-                src="https://mcard3.bojagicard.com/thm/?reqfor=load&w=1280&q=60&src=/ecard/photo/s/sample180/d694bd8b0e0216bf712351dcf159795c.jpg"
-                data-src_original="https://mcard3.bojagicard.com/ecard/photo/s/sample180/d694bd8b0e0216bf712351dcf159795c.jpg"
-                class="photo_view_img"
-                data-photo_idx="1338020"
-                data-photo_no="8"
-                data-is_video=""
-                style="margin-top: 4px"
-              />
-
-              <img
-                class="photo_view_swipe_guide"
-                src="https://mcard3.bojagicard.com/img/arrow_ani_01_left.gif"
-                style="left: 0px"
-              />
-              <img
-                class="photo_view_swipe_guide"
-                src="https://mcard3.bojagicard.com/img/arrow_ani_01_right.gif"
-                style="right: 0px"
-              />
-            </div>
-
-            <!-- 중단영역 -->
-            <div class="photo_view_mid">
-              <img
-                class="photo_view_slide_button"
-                id="photo_view_slide_left_button"
-                src="./img/photo_view-button_left.png"
-                style="left: 0"
-              />
-
-              <table
-                id="photo_view_console"
-                cellspacing="0"
-                cellpadding="0"
-                align="center"
-                height="100%"
-              >
-                <tr>
-                  <td class="photo_view_heart_button" data-idx="1338020">
-                    <img src="./img/photo_view-icon_heart.png" height="21" />
-                  </td>
-                  <td class="photo_view_heart_count" data-idx="1338020">3</td>
-                  <td style="line-height: 100%">
-                    <img src="./img/photo_view-icon_reply.png" height="21" />
-                  </td>
-                  <td class="photo_reply_counter" data-idx="1338020">0</td>
-                </tr>
-              </table>
-
-              <img
-                class="photo_view_slide_button"
-                id="photo_view_slide_right_button"
-                src="./img/photo_view-button_right.png"
-                style="right: 0"
-              />
-            </div>
-
-            <div class="photo_view_memo"></div>
-
-            <div style="padding-top: 6px; padding-bottom: 6px"></div>
-
-            <div class="reply_list" data-idx="1338020"></div>
-
-            <div style="clear: both"></div>
-          </div>
-
-          <div class="swiper-slide" data-idx="1338019">
-            <!-- 상단영역 -->
-            <div style="height: 15px; position: relative"></div>
-
-            <!-- photo img -->
-            <div class="photo_view_img_wrapper">
-              <img
-                src="https://mcard3.bojagicard.com/thm/?reqfor=load&w=1280&q=60&src=/ecard/photo/s/sample180/c1aae8a3acb21d86e273892f1932dd8d.jpg"
-                data-src_original="https://mcard3.bojagicard.com/ecard/photo/s/sample180/c1aae8a3acb21d86e273892f1932dd8d.jpg"
-                class="photo_view_img"
-                data-photo_idx="1338019"
-                data-photo_no="9"
-                data-is_video=""
-                style="margin-top: 4px"
-              />
-
-              <img
-                class="photo_view_swipe_guide"
-                src="https://mcard3.bojagicard.com/img/arrow_ani_01_left.gif"
-                style="left: 0px"
-              />
-              <img
-                class="photo_view_swipe_guide"
-                src="https://mcard3.bojagicard.com/img/arrow_ani_01_right.gif"
-                style="right: 0px"
-              />
-            </div>
-
-            <!-- 중단영역 -->
-            <div class="photo_view_mid">
-              <img
-                class="photo_view_slide_button"
-                id="photo_view_slide_left_button"
-                src="./img/photo_view-button_left.png"
-                style="left: 0"
-              />
-
-              <table
-                id="photo_view_console"
-                cellspacing="0"
-                cellpadding="0"
-                align="center"
-                height="100%"
-              >
-                <tr>
-                  <td class="photo_view_heart_button" data-idx="1338019">
-                    <img src="./img/photo_view-icon_heart.png" height="21" />
-                  </td>
-                  <td class="photo_view_heart_count" data-idx="1338019">4</td>
-                  <td style="line-height: 100%">
-                    <img src="./img/photo_view-icon_reply.png" height="21" />
-                  </td>
-                  <td class="photo_reply_counter" data-idx="1338019">1</td>
-                </tr>
-              </table>
-
-              <img
-                class="photo_view_slide_button"
-                id="photo_view_slide_right_button"
-                src="./img/photo_view-button_right.png"
-                style="right: 0"
-              />
-            </div>
-
-            <div class="photo_view_memo"></div>
-
-            <div style="padding-top: 6px; padding-bottom: 6px"></div>
-
-            <div class="reply_list" data-idx="1338019">
-              <div
-                class="msg reply"
-                data-idx="215298"
-                data-croot="215298"
-                data-idf="acab09dbe4104182e6345708ed84f219"
-                data-parent_idx="1338019"
-                data-area="photo"
-                data-notify="1"
-              >
-                <div class="msg_block_top">
-                  <span class="msg_croot_name"></span>
-                  <span class="msg_name" data-idx="215298">ㅌㅌ</span>
-                  <span class="msg_text msg_memo" data-idx="215298"
-                    >ㅌㅌㅌㅌ</span
-                  >
-                </div>
-
-                <div
-                  class="msg_block_bottom"
-                  data-area="photo"
-                  data-idx="215298"
-                  data-mail="wjddsml@naver.com"
-                >
-                  <span class="msg_date">8월 28일</span>
-
-                  <div class="msg_button msg_reply_button">답글달기</div>
-                </div>
-              </div>
-              <div style="clear: both"></div>
-              <br />
-              <b>Warning</b>: implode() [<a href="function.implode"
-                >function.implode</a
-              >]: Invalid arguments passed in
-              <b>/home/hosting_users/bojagitest/www/g/photo_view_reply.php</b>
-              on line <b>14</b><br />
-              <br />
-              <b>Warning</b>: implode() [<a href="function.implode"
-                >function.implode</a
-              >]: Invalid arguments passed in
-              <b>/home/hosting_users/bojagitest/www/g/photo_view_reply.php</b>
-              on line <b>14</b><br />
-            </div>
-
-            <div style="clear: both"></div>
-          </div>
-
-          <div class="swiper-slide" data-idx="1338018">
-            <!-- 상단영역 -->
-            <div style="height: 15px; position: relative"></div>
-
-            <!-- photo img -->
-            <div class="photo_view_img_wrapper">
-              <img
-                src="https://mcard3.bojagicard.com/thm/?reqfor=load&w=1280&q=60&src=/ecard/photo/s/sample180/7558f2f97a4e88cf115cdbf1296ac03b.jpg"
-                data-src_original="https://mcard3.bojagicard.com/ecard/photo/s/sample180/7558f2f97a4e88cf115cdbf1296ac03b.jpg"
-                class="photo_view_img"
-                data-photo_idx="1338018"
-                data-photo_no="10"
-                data-is_video=""
-                style="margin-top: 4px"
-              />
-
-              <img
-                class="photo_view_swipe_guide"
-                src="https://mcard3.bojagicard.com/img/arrow_ani_01_left.gif"
-                style="left: 0px"
-              />
-              <img
-                class="photo_view_swipe_guide"
-                src="https://mcard3.bojagicard.com/img/arrow_ani_01_right.gif"
-                style="right: 0px"
-              />
-            </div>
-
-            <!-- 중단영역 -->
-            <div class="photo_view_mid">
-              <img
-                class="photo_view_slide_button"
-                id="photo_view_slide_left_button"
-                src="./img/photo_view-button_left.png"
-                style="left: 0"
-              />
-
-              <table
-                id="photo_view_console"
-                cellspacing="0"
-                cellpadding="0"
-                align="center"
-                height="100%"
-              >
-                <tr>
-                  <td class="photo_view_heart_button" data-idx="1338018">
-                    <img src="./img/photo_view-icon_heart.png" height="21" />
-                  </td>
-                  <td class="photo_view_heart_count" data-idx="1338018">2</td>
-                  <td style="line-height: 100%">
-                    <img src="./img/photo_view-icon_reply.png" height="21" />
-                  </td>
-                  <td class="photo_reply_counter" data-idx="1338018">0</td>
-                </tr>
-              </table>
-
-              <img
-                class="photo_view_slide_button"
-                id="photo_view_slide_right_button"
-                src="./img/photo_view-button_right.png"
-                style="right: 0"
-              />
-            </div>
-
-            <div class="photo_view_memo"></div>
-
-            <div style="padding-top: 6px; padding-bottom: 6px"></div>
-
-            <div class="reply_list" data-idx="1338018"></div>
-
-            <div style="clear: both"></div>
-          </div>
-
-          <div class="swiper-slide" data-idx="1338017">
-            <!-- 상단영역 -->
-            <div style="height: 15px; position: relative"></div>
-
-            <!-- photo img -->
-            <div class="photo_view_img_wrapper">
-              <img
-                src="https://mcard3.bojagicard.com/thm/?reqfor=load&w=1280&q=60&src=/ecard/photo/s/sample180/2c4c4d13fac2f4b63dcc8fb7971b88cd.jpg"
-                data-src_original="https://mcard3.bojagicard.com/ecard/photo/s/sample180/2c4c4d13fac2f4b63dcc8fb7971b88cd.jpg"
-                class="photo_view_img"
-                data-photo_idx="1338017"
-                data-photo_no="11"
-                data-is_video=""
-                style="margin-top: 4px"
-              />
-
-              <img
-                class="photo_view_swipe_guide"
-                src="https://mcard3.bojagicard.com/img/arrow_ani_01_left.gif"
-                style="left: 0px"
-              />
-              <img
-                class="photo_view_swipe_guide"
-                src="https://mcard3.bojagicard.com/img/arrow_ani_01_right.gif"
-                style="right: 0px"
-              />
-            </div>
-
-            <!-- 중단영역 -->
-            <div class="photo_view_mid">
-              <img
-                class="photo_view_slide_button"
-                id="photo_view_slide_left_button"
-                src="./img/photo_view-button_left.png"
-                style="left: 0"
-              />
-
-              <table
-                id="photo_view_console"
-                cellspacing="0"
-                cellpadding="0"
-                align="center"
-                height="100%"
-              >
-                <tr>
-                  <td class="photo_view_heart_button" data-idx="1338017">
-                    <img src="./img/photo_view-icon_heart.png" height="21" />
-                  </td>
-                  <td class="photo_view_heart_count" data-idx="1338017">8</td>
-                  <td style="line-height: 100%">
-                    <img src="./img/photo_view-icon_reply.png" height="21" />
-                  </td>
-                  <td class="photo_reply_counter" data-idx="1338017">1</td>
-                </tr>
-              </table>
-
-              <img
-                class="photo_view_slide_button"
-                id="photo_view_slide_right_button"
-                src="./img/photo_view-button_right.png"
-                style="right: 0"
-              />
-            </div>
-
-            <div class="photo_view_memo"></div>
-
-            <div style="padding-top: 6px; padding-bottom: 6px"></div>
-
-            <div class="reply_list" data-idx="1338017">
-              <div
-                class="msg reply"
-                data-idx="212080"
-                data-croot="212080"
-                data-idf="35569252dd5dba2f22294325e6e0c4d9"
-                data-parent_idx="1338017"
-                data-area="photo"
-                data-notify="1"
-              >
-                <div class="msg_block_top">
-                  <span class="msg_croot_name"></span>
-                  <span class="msg_name" data-idx="212080">hi</span>
-                  <span class="msg_text msg_memo" data-idx="212080">test</span>
-                </div>
-
-                <div
-                  class="msg_block_bottom"
-                  data-area="photo"
-                  data-idx="212080"
-                  data-mail="hi@hi.kr"
-                >
-                  <span class="msg_date">7월 5일</span>
-
-                  <div class="msg_button msg_reply_button">답글달기</div>
-                </div>
-              </div>
-              <div style="clear: both"></div>
-              <br />
-              <b>Warning</b>: implode() [<a href="function.implode"
-                >function.implode</a
-              >]: Invalid arguments passed in
-              <b>/home/hosting_users/bojagitest/www/g/photo_view_reply.php</b>
-              on line <b>14</b><br />
-              <br />
-              <b>Warning</b>: implode() [<a href="function.implode"
-                >function.implode</a
-              >]: Invalid arguments passed in
-              <b>/home/hosting_users/bojagitest/www/g/photo_view_reply.php</b>
-              on line <b>14</b><br />
-            </div>
 
             <div style="clear: both"></div>
           </div>
@@ -3620,8 +2990,8 @@ function kakao_navi(){
         $(".photo_view_img[data-photo_idx=" + photo_idx + "]").each(
           function () {
             $(this).attr(
-              "src", obj.src
-            //   $(this).attr("src").replace("reqfor=load", "reqfor=view")
+              "src",
+             $(this).attr("src").replace("reqfor=load", "reqfor=view")
             );
           }
         );
@@ -4111,6 +3481,11 @@ function kakao_navi(){
         padding-bottom: 30px;
         background-color: #cfcfcf;
         width: 100%;
+        display: none;
+      }
+
+      #reply_add_wrapper_shadow {
+          display: none;
       }
     </style>
 

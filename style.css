@@ -466,12 +466,3 @@ input[type='text'], input[type='tel'], input[type='password'], select {
 #map_not_registrated_txt {
     font-size:14px!important;font-weight:bold;margin-left:15px;color:#fff;
 }
-
-
-#skin_png {
-    display: none;
-}
-
-#skin_info {
-    display: none;
-}
